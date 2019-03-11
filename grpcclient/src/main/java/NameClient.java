@@ -51,10 +51,14 @@ public class NameClient {
     public static void main(String[] args) {
         NameClient nameClient=new NameClient(DEFAULT_HOST,DEFAULT_PORT);
 
-         //System.out.println("测试一下");
-        for (String arg:args){
-            String res=nameClient.getIpByName(arg);
-            System.out.println("get result from server: " + res + " as param is " + arg);
+         System.out.println("测试一下");
+
+            String res=nameClient.getIpByName("alsion");
+            System.out.println("get result from server: " + res + " as param is " + 123);
+        try {
+            nameClient.shutdown();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

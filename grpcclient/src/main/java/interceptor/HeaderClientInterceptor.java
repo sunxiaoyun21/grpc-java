@@ -49,7 +49,7 @@ public class HeaderClientInterceptor implements ClientInterceptor {
                 },headers);
 
                 AuthServiceGrpc.AuthServiceBlockingStub authService=AuthServiceGrpc.newBlockingStub(channel);
-                AuthServiceProto.Result result=authService.authenticate(AuthServiceProto.Credit.newBuilder().setUsername("java").setPassword("123456").build());
+                AuthServiceProto.Result result=authService.authenticate(AuthServiceProto.Credit.newBuilder().setUsername("grpc").setPassword("123456").build());
                 if(result.getSuccess()){
                     token=result.getToken();
                     logger.info("token" +token);

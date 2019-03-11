@@ -26,6 +26,7 @@ public class NameServer {
       // 拦截 ServerInterceptor
       server= serverBuilder.addService(ServerInterceptors.intercept(NameServiceGrpc.bindService(new  NameServiceImplBaseImpl()),new ServerInterceptor()))
               .addService(ServerInterceptors.intercept(AuthServiceGrpc.bindService(new AuthServiceImpl())))
+              .addService(NameServiceGrpc.bindService(new NameServiceImplBaseImpl()))
               .build();
       //server = serverBuilder.addService(NameServiceGrpc.bindService(new  NameServiceImplBaseImpl())).build();
     }
